@@ -1,8 +1,8 @@
-import SearchPage from '@/components/ui/components/SearchPage'
+import SearchPlace from '@/components/ui/components/SearchWithRetrive'
 import React from 'react'
 
-export default function SearchPlace() {
+export default function SearchPage() {
   return (
-    <SearchPage/>
+    <SearchPlace/>
   )
 }

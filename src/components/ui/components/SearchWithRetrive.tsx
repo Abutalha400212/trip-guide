@@ -6,12 +6,13 @@ import notFound from "@/assets/not-found.png"
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../button";
-export default function SearchPage() {
+import { Suspense } from "react";
+export default function SearchPlace() {
   const searchParams = useSearchParams();
   const search = searchParams.get("searchTerm");
   const { data } = useGetPlacesQuery({ searchTerm: search });
   return (
-   <>
+   <Suspense fallback={<div>Loading...</div>}>
     <div>
       <h1 className="font-bold py-2 text-2xl text-center">
        {data?.langth && "Searching Result.."} 
@@ -33,6 +34,6 @@ export default function SearchPage() {
         </div>
         
         </div>}
-   </>
+   </Suspense>
   );
 }
